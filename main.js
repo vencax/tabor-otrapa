@@ -1,10 +1,12 @@
-
-require('coffee-script/register');
-
-opts = {
+const DB = require('./db')
+const ZM = require('./lib/zm/zm')
+const opts = {
   site: 'http://www.taborcz.eu',
   folder: process.env.STORAGE_FOLDER || '.storage'
-};
+}
 
-require("./lib/rada")(opts);
-require("./lib/zm")(opts);
+DB()
+.then(db => {
+  ZM.loadJednaniPage(opts, db, '/20-zasedani-zastupitelstva-mesta-tabora-konane-15-12-2008/d-1627/p1=66319')
+})
+.catch(err => console.log(err))
