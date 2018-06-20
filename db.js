@@ -33,14 +33,14 @@ const knex = Knex(opts)
 
 class DB {
   saveJednaniZM (data) {
-    return knex(C.TABLENAMES.JEDNANIZM).insert(data)
+    return knex(C.TABLENAMES.JEDNANIZM).returning('id').insert(data)
     .then(ids => {
       return Object.assign(data, {id: ids[0]})
     })
   }
 
   saveBodJednaniZM (data) {
-    return knex(C.TABLENAMES.BODJEDNANIZM).insert(data)
+    return knex(C.TABLENAMES.BODYJEDNANIZM).returning('id').insert(data)
     .then(ids => {
       return Object.assign(data, {id: ids[0]})
     })

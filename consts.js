@@ -1,5 +1,5 @@
 
 exports.TABLENAMES = {
   JEDNANIZM: 'jednanizm',
-  OSOBY: 'osoby'
+  BODYJEDNANIZM: 'bodyjednanizm'
 }

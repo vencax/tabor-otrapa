@@ -5,11 +5,11 @@ exports.up = (knex, Promise) => {
     table.increments('id').primary()
     table.string('name', 512).notNullable()
     table.string('link', 512).notNullable()
-    table.timestamp('date').notNullable()
+    table.date('datum').notNullable()
     table.string('usneseni', 512).notNullable()
     table.string('hlasovani', 512).notNullable()
     table.timestamp('created').notNullable().defaultTo(knex.fn.now())
-    table.unique(['date'])
+    table.unique(['datum'])
   })
 }
 

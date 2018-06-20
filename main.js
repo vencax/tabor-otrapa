@@ -1,3 +1,4 @@
+require('dotenv').config({path: process.env.DOTENV_CONFIG || '.env'})
 const DB = require('./db')
 const ZM = require('./lib/zm/zm')
 const opts = {
